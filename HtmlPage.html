@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/jquery-2.1.3.js"></script>
+    <script src="js/MyApp.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="PropertyController">
+
+    <div>
+        <input type="button" data-ng-click="MyClick()" value="Get Data" />
+    </div>
+    <table>
+    <thead><tr><th>Select Order</th><th>Driver ID</th><th>Driver Name</th><th>Address</th></tr></thead>
+        <tbody>
+            <tr data-ng-repeat="dv in MyDriverList"><td><input type="checkbox" name="chkOrders" value="{{dv.DriverUserID}}" id="{{dv.DriverUserID"}}" /></td><td>{{dv.DriverUserID}}</td><td>{{dv.DriverName}}</td><td>{{dv.ClientAddress}},{{dv.ClientState}}</td>
+            <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    {{MyDriverList.length}}
+    <br />
+    <input type="submit" value="Accept Order" data-ng-click="AcceptOrder()" />
+</body>
+</html>
